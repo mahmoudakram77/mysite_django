@@ -1,0 +1,28 @@
+<nav class="navbar " data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'main:home' %}">Django App</a>
+    </button>
+    <div class="d-flex" id="" >
+      <ul style='flex-direction:row;margin:0 10px;' class="navbar-nav d-flex mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'main:home' %}">🏠</a>
+        </li>
+        <li class="nav-item">
+          <a target=_blank class="nav-link active" aria-current="page" href="{% url 'admin:index' %}">⚙</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'users:logout' %}">Logout <span style="font-size:10px; color:white;">({{ user.username }})</span></a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'main:home' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

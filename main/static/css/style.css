@@ -1,0 +1,119 @@
+h1 {
+  color: red;
+}
+
+.collapse {
+  position: absolute;
+  right: 20px;
+}
+.navbar{
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  background-image: linear-gradient(to left, rgb(237, 0, 0), rgb(255, 166, 0));
+
+}
+
+.form-login {
+  color: rgb(234, 11, 11);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 20px;
+  height: 340px;
+  width: 600px; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.677); 
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+  .form-login {
+    padding: 40px;
+    margin-top: 150px;
+    width: 350px;
+  }
+}
+
+.register {
+
+  background-image: linear-gradient(to left, rgb(237, 0, 0), rgb(255, 166, 0));
+
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 15px;
+
+  padding: 5px 20px;
+  box-shadow: 0 0 5px black;
+  text-decoration: none;
+  transition: .5s ease;
+}
+
+
+.register:hover{
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(to left, rgb(237, 0, 0), rgb(255, 166, 0));
+
+  box-shadow: 0 0 5px rgb(40, 3, 3);
+  letter-spacing: 5px;
+}
+
+@keyframes text {
+  0% { 
+    color: red;
+    transform: scale(1);
+    text-shadow: 0 0 1px black;
+   }
+
+  100% {
+    
+    color: rgb(30, 1, 1)  ;
+    text-shadow: 0 0 1px black;
+    transform: scale(1);
+  
+  
+  }
+  
+}
+.loginPage {
+  animation: text 1s infinite alternate-reverse;
+}
+
+
+.Loginbtn {
+  background-image: linear-gradient(to left, rgb(237, 0, 0), rgb(255, 166, 0));
+
+  color: white;
+  
+}
+.Loginbtn:hover{
+color: black;
+
+}
+
+.textinput   , .passwordinput {
+
+  color: rgb(255, 0, 0);
+
+}
+.textinput:focus ,
+.passwordinput:focus
+{
+
+  color: rgb(245, 0, 0);
+
+}
+
+
+#star {
+  color: red;
+}
+
+
+.helptext {
+  color:red;
+}
+
+.nav-link {
+  margin: 0 5px;
+}

@@ -1,0 +1,58 @@
+
+
+
+
+#star  {
+  color: red;
+}
+
+#id_username_helptext ,
+#id_email_helptext,
+#id_first_name_helptext,
+#id_last_name_helptext,
+#id_password1_helptext,
+#id_password2_helptext
+{
+  background-color: none;
+  color:gray;
+ 
+}
+
+.reg {
+  width: 600px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  padding: 10px 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width:768px) {
+
+  .reg {
+    width: 300px;
+  }
+}
+
+h2 {
+animation: text 1s infinite alternate-reverse;
+}
+
+@keyframes text {
+  0% { 
+    color: red;
+    transform: scale(1);
+    text-shadow: 0 0 1px black;
+   }
+
+  100% {
+    
+    color: rgb(30, 1, 1)  ;
+    text-shadow: 0 0 1px black;
+    transform: scale(1);
+  
+  
+  }
+  
+}

@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{%load static%}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock extra_styles %}
+
+{% block title %}
+Register
+{% endblock title %}
+  
+
+
+{% block content %}
+
+<div class="container reg">
+  {% load crispy_forms_tags %}
+  <h2 class='text-center reg-text'>Register Page</h2>
+  <form if='registeroform' class='formregister' action="" method='post'>
+    {% csrf_token %}
+  {{form|crispy}}
+  <div class=>
+    <button type='submit' class='btn register mt-1 text-center'>Register</button>
+
+  </div>
+  <p >if you have an account <a class='btn register' href="{% url 'main:home' %}">Login</a></p>
+
+  </form>
+</div>
+
+{% endblock content %}
+  
