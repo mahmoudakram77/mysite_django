@@ -1,0 +1,50 @@
+.asteriskField {
+  color: red;
+}
+
+.formcreate form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.container form, button {
+ width: 600px;
+ font-size: 12px;
+ font-weight: bolder;
+box-shadow: 0 0 10px black;
+padding: 10px;
+border-radius: 20px;
+
+margin: 0 auto;
+margin-top: 16px;
+
+}
+
+input{
+  height:40px;
+}
+
+.btncreate {
+  background-image: linear-gradient(red, orange);
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 0 10px red; 
+  font-weight: bold;
+  transition: .2s ease;
+}
+.btncreate:hover{
+  background-color: orange;
+  background-image: linear-gradient(orange, red);
+  transform: scale(1.1);
+}
+.btncreate{
+  width: 120px;
+}
+@media screen and (max-width:768px) {
+  .container{
+    width: 300px;
+  }
+}

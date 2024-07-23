@@ -1,0 +1,41 @@
+{% extends 'main/base.html'%}
+{% load static %}
+
+{% block extra_styles %}
+  <link rel="stylesheet" href="{% static 'css/create.css' %}">
+{% endblock extra_styles %}
+  
+
+{% block title %}
+  create new record
+{% endblock title %}
+  
+
+
+
+
+  
+{% block content %}
+{% if user.is_authenticated %}
+{% load crispy_forms_tags %}
+
+
+<form class='createform' action="" method='post'>
+  <h2 class='text-center'>Create New Record</h2>
+  {% csrf_token %}
+{{form|crispy}}
+<div class='text-center'><button class='btncreate' type='submit'>Create New</button>
+</div>
+</form>
+
+{% else %}
+  <p style='font-size:20px' class='text-center'>You are not logged in. Please <a href="{% url 'main:home' %}">login</a> to create a new record.</p>
+{% endif %} 
+
+{% endblock content %}
+
+
+
+  
+
+

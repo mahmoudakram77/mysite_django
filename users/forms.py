@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import Record
 
 class registerForm(UserCreationForm):
     email = forms.EmailField(
@@ -34,7 +35,7 @@ class registerForm(UserCreationForm):
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password1'].widget.attrs['placeholder'] = 'Password'
         self.fields['password1'].label = ''
-        self.fields['password1'].help_text = 'Enter your password<span id="star">*</span>'
+        self.fields['password1'].help_text = 'Enter your password<span id="star">*</span> <ul><li>Yor password cant be to similar to other person information</li><li>This password is too short. It must contain at least 8 characters.</li><li>Your password cant be a commonly used password</li><li>Your password cant be entirely numeric</li></ul>'
         
         self.fields['password2'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
@@ -63,3 +64,18 @@ class registerForm(UserCreationForm):
             password2 = clean_data.get('password2')
             if password1 and password2 and password1 != password2:
                 self.add_error('password2', 'the password is not match')
+
+
+
+class recordForm(forms.ModelForm):
+    class Meta:
+        
+     model = Record
+     fields = '__all__'
+
+
+    def __init__(self, *args, **kwargs):
+        super(recordForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['placeholder'] = field.label  # Use the field label as the placeholder
+            field.label = ''

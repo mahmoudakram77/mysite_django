@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Record
+{% endblock title %}
+  
+
+
+  
+{% block content %}  
+
+{% if user.is_authenticated %}
+
+
+{% if messages %}
+
+
+{% for message in messages  %}
+<div class='alert alert-{{message.tags}}'>
+
+  {{ message }}  <strong>{{ record.first_name }} {{record.last_name}}</strong>
+</div>
+
+{% endfor %}
+  
+  
+{% endif %}
+  
+
+<h1 class='text-center mb-3'>Record Page</h1>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Detail</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for record in records %}
+    <tr>
+      <td>{{record.id}}</td>
+      <td>{{ record.first_name }}</td>
+      <td>{{ record.last_name }}</td>
+      <td>{{ record.email }}</td>
+      <td>{{ record.phone }}</td>
+      <td>{{ record.address }}</td>
+      <td>{{ record.city }}</td>
+      <td>{{ record.state }}</td>
+      <td>{{ record.zipcode }}</td>
+    <td><a href="{% url 'users:detail' record.pk %}">📰</a></td>
+    <td><a href="{% url 'users:edit-record' record.pk %}">✏</a></td>
+    <td><a href="{% url 'users:delete-record' record.pk %}">🗑</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  {% else %}
+  <p style='color:red;' class='text-center'>You are not authorized to view this page </p>
+{% endif %}
+{% endblock content %}
+
+  
+

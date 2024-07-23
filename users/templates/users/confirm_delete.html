@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<form method='post'>
+  {% csrf_token %}
+  <p>are you sure to delete this record <strong>{{ record.first_name }} {{record.last_name}}  </strong> </p>
+  <button type='submit'>Yes</button>
+  <a href="{% url 'users:record'%}">Cancel</a>
+  
+  </form>
+
+{% endif %}
+
+
+
+{% endblock content %}

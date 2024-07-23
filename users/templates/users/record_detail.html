@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+  
+{% endblock title %}
+  
+
+{% block content %}
+  
+
+{% if user.is_authenticated %}
+
+<div class='d-flex justify-content-between'>
+  <a href="{% url 'users:record' %}">Go back to record</a>
+
+  <h1 class='text-center'>Record Details</h1>
+</div>
+
+<table class='table'>
+  <thead>
+    <td>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Create At</th>
+    </td>
+  </thead>
+  <tbody>
+    <td>
+      <th>{{record.first_name}} {{ record.last_name }}</th>
+      <th>{{ record.email }}</th>
+      <th>{{record.create_at}}</th>
+    </td>
+  </tbody>
+</table>
+
+
+{% else %}
+<p style='color:red;'>You are not authorized to view this page
+        <a href="{% url 'main:home' %}">Go back to home</a>
+</p>
+{% endif %}
+  
+
+{% endblock content %}
+  
+
+
+
+  
